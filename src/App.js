@@ -1,12 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter,Route,Switch} from 'react-router-dom';
+import {routePath} from './constants/routes';
+import Home from "./views/Home/Home"
 import './App.css';
-function App() {
-  return (
-    <div className="App">
-       <h1>Demo</h1> 
-   </div>
-  );
+
+const App =(props)=>{
+  return(
+    <BrowserRouter>
+    <Switch>
+      <Route exact path={routePath.HOME} name="Home Page" component={Home}/>
+    </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App;
